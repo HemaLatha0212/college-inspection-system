@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mb-4">Add Inspection</h1>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">College</label>
+        <select name="college_id" class="form-select">
+            {% for c in colleges %}
+            <option value="{{ c.id }}">{{ c.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control" name="inspection_date">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Inspector</label>
+        <input type="text" class="form-control" name="inspector">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Remarks</label>
+        <textarea class="form-control" name="remarks"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

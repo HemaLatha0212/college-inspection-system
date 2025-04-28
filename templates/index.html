@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mb-4">Colleges</h1>
+<a href="{{ url_for('add_college') }}" class="btn btn-success mb-3">Add New College</a>
+<table class="table table-striped">
+    <thead><tr><th>ID</th><th>Name</th><th>Location</th><th>Actions</th></tr></thead>
+    <tbody>
+        {% for college in colleges %}
+        <tr>
+            <td>{{ college.id }}</td>
+            <td>{{ college.name }}</td>
+            <td>{{ college.location }}</td>
+            <td><a href="{{ url_for('departments', college_id=college.id) }}" class="btn btn-primary btn-sm">Departments</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

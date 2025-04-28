@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mb-4">Departments for {{ college.name }}</h1>
+<form method="post" class="mb-4">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Department Name</label>
+            <input type="text" class="form-control" name="department_name">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Head</label>
+            <input type="text" class="form-control" name="head">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Description</label>
+            <input type="text" class="form-control" name="description">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Department</button>
+</form>
+<table class="table table-bordered">
+    <thead><tr><th>ID</th><th>Name</th><th>Head</th><th>Description</th></tr></thead>
+    <tbody>
+        {% for d in depts %}
+        <tr><td>{{ d.id }}</td><td>{{ d.department_name }}</td><td>{{ d.head }}</td><td>{{ d.description }}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
