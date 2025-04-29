@@ -6,20 +6,7 @@ Project Structure
 pgsql
 Copy
 Edit
-college-inspection-system/
-├── app.py
-├── schema.sql
-├── requirements.txt
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── add_college.html
-│   ├── departments.html
-│   ├── inspections.html
-│   ├── add_inspection.html
-│   ├── criteria.html
-│   └── add_inspection_rating.html
-└── README.md
+
 Setup Instructions
 1. Clone the Repository
 bash
